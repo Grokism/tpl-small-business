@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: __APP_SLUG__-fe
+  namespace: __NAMESPACE__
+spec:
+  type: ClusterIP
+  selector:
+    app: __APP_SLUG__-fe
+  ports:
+    - port: 80
+      targetPort: 80

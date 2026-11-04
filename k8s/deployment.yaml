@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: __APP_SLUG__-fe
+  namespace: __NAMESPACE__
+  labels:
+    app: __APP_SLUG__-fe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: __APP_SLUG__-fe
+  template:
+    metadata:
+      labels:
+        app: __APP_SLUG__-fe
+    spec:
+      # No secrets are mounted: this is a static, public SPA.
+      containers:
+        - name: __APP_SLUG__-fe
+          image: __IMAGE__
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "10m"
+              memory: "32Mi"
+            limits:
+              cpu: "250m"
+              memory: "128Mi"

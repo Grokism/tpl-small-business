@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "templateId": "small_business",
+  "label": "Small Business & Client Service Portal (Staff + Client PermSets)",
+  "cardTitle": "Small Business & Services",
+  "cardBadge": "Staff + Client Portal",
+  "cardIcon": "💼",
+  "accentColor": "#0d9488",
+  "heroImageUrl": "assets/templates/tpl-small-business.jpg",
+  "paletteSwatches": [
+    "#0d9488",
+    "#f0fdfa",
+    "#ea580c",
+    "#0f172a"
+  ],
+  "summary": "Bright, welcoming studio & service business template where Staff post project deliverables and Clients review and approve milestones.",
+  "defaultTheme": "ocean_teal",
+  "defaultHeadlineSuffix": "Client & Service Portal",
+  "defaultGoal": "Give staff and clients a shared, zero-PII project and service portal where deliverables, status updates, and service requests are organized by Client / Project Code.",
+  "defaultFeatures": [
+    "Public service showcase with business hours, service menu, and client onboarding call-to-action",
+    "Staff PermSet workspace to post deliverables, service milestones, and scheduling updates",
+    "Client PermSet portal scoped by Client / Project Code to review work and submit requests",
+    "Isolated MongoDB persistence for project timelines and client approvals"
+  ],
+  "preserveDeveloperPages": true,
+  "defaultRoles": [
+    {
+      "roleKey": "staff",
+      "roleLabel": "Staff Provider",
+      "purpose": "Post project deliverables, service updates, and client milestones.",
+      "enrollmentPolicy": "issuer_only",
+      "scopeLabel": "Client / Project Code (e.g. proj-acme)"
+    },
+    {
+      "roleKey": "client",
+      "roleLabel": "Verified Client",
+      "purpose": "View project deliverables, approve milestones, and submit service requests.",
+      "enrollmentPolicy": "self_enroll",
+      "scopeLabel": "Client / Project Code (e.g. proj-acme)"
+    }
+  ],
+  "templateQuestions": [
+    {
+      "key": "servicesOffered",
+      "label": "1. What services or packages does your business offer?",
+      "placeholder": "e.g. Custom Remodeling, Design Consultations, Maintenance Plans",
+      "hint": "Displayed as featured service cards on your public landing page.",
+      "defaultValue": "Initial Consultation & Space Planning — Tailored blueprint & project scope\nCustom Project Delivery & Milestones — Dedicated weekly progress updates\nOngoing Support & Priority Care — Year-round maintenance & client support",
+      "multiline": true
+    },
+    {
+      "key": "businessHoursAndLocation",
+      "label": "2. Business Hours & Service Area / Location",
+      "placeholder": "e.g. Mon–Fri 8am–6pm CT · Serving Twin Cities & Remote Clients",
+      "hint": "Shown in the public contact & availability strip.",
+      "defaultValue": "Mon–Fri 8:30 AM – 5:30 PM · Serving Local & Remote Clients"
+    },
+    {
+      "key": "primaryCtaText",
+      "label": "3. Primary Call-to-Action & Welcome Promise",
+      "placeholder": "e.g. Track your project milestones with 100% private client login",
+      "hint": "Highlighted in the hero banner above the login button.",
+      "defaultValue": "Track your project milestones, deliverables, and service requests with zero personal data exposure."
+    },
+    {
+      "key": "deliverableCategories",
+      "label": "4. Member Workspace Categories (comma-separated)",
+      "placeholder": "e.g. Project Milestone, Estimate / Invoice, Client Request, Schedule Update",
+      "hint": "Populates the category options inside the protected /home workspace.",
+      "defaultValue": "Project Milestone, Deliverable Ready, Client Request, Schedule Update"
+    }
+  ]
+}
